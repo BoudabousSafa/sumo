@@ -590,8 +590,8 @@ GUINet::loadEdgeData(const std::string& file) {
     XMLSubSys::runParser(discoveryHandler, file);
     std::vector<std::string> attrs = discoveryHandler.getEdgeAttrs();
     WRITE_MESSAGE("Loading edgedata from '" + file 
-            + "' Found attributes " + toString(attrs.size()) 
-            + ": " + toString(attrs));
+            + "' Found " + toString(attrs.size())
+            + " attributes: " + toString(attrs));
     myEdgeDataEndTime = MAX2(myEdgeDataEndTime, discoveryHandler.lastIntervalEnd);
     // create a retriever for each attribute
     std::vector<EdgeFloatTimeLineRetriever_GUI> retrieverDefsInternal;
