@@ -583,7 +583,7 @@ GUINet::EdgeFloatTimeLineRetriever_GUI::addEdgeWeight(const std::string& id,
 }
 
 
-void 
+bool
 GUINet::loadEdgeData(const std::string& file) {
     // discover edge attributes
     DiscoverAttributes discoveryHandler(file);
@@ -604,7 +604,7 @@ GUINet::loadEdgeData(const std::string& file) {
         retrieverDefs.push_back(new SAXWeightsHandler::ToRetrieveDefinition(attr, true, retrieverDefsInternal.back()));
     }
     SAXWeightsHandler handler(retrieverDefs, "");
-    XMLSubSys::runParser(handler, file);
+    return XMLSubSys::runParser(handler, file);
 }
 
 
